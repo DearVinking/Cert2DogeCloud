@@ -7,6 +7,7 @@
 - 生成多吉云 API 访问令牌（AccessToken）
 - 上传证书到多吉云 CDN
 - 将上传的证书绑定到指定的域名
+- 支持删除旧证书（可选功能）
 
 ## 环境要求
 
@@ -31,18 +32,9 @@
 
 在脚本中，需要配置以下变量：
 
-`ACCESS_KEY` 和 `SECRET_KEY`：多吉云的 `AccessKey ` 和 `SecretKey`。
-
-`FULLCHAIN_PATH` 和 `PRIVKEY_PATH`：宝塔面板 Let's Encrypt 证书的全链证书路径和私钥路径。
-
-`DOMAINS`：需要绑定证书的域名列表。
-
-## 脚本结构
-
-`generateAccessToken` 函数：生成用于 API 调用的 `AccessToken`。
-
-`uploadCert` 函数：上传证书到多吉云。
-
-`bindCert` 函数：将证书绑定到指定域名。
+- `ACCESS_KEY` 和 `SECRET_KEY`：多吉云的 `AccessKey` 和 `SecretKey`。
+- `FULLCHAIN_PATH` 和 `PRIVKEY_PATH`：宝塔面板 Let's Encrypt 证书的全链证书路径和私钥路径。
+- `DOMAINS`：需要绑定证书的域名列表。
+- `DELETE_OLD_CERT`：是否删除旧证书（默认为 `false`）。设置为 `true` 时，将在成功绑定新证书后删除旧证书。
 
 ## MIT
