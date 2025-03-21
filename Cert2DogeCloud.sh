@@ -4,19 +4,19 @@
 ACCESS_KEY="xxxx"
 SECRET_KEY="xxxxxx"
 
-# 宝塔面板Let's Encrypt证书路径
-FULLCHAIN_PATH="/www/server/panel/vhost/ssl/xxxxxxx/fullchain.pem"
-PRIVKEY_PATH="/www/server/panel/vhost/ssl/xxxxxxx/privkey.pem"
-
-# 是否删除旧证书
-DELETE_OLD_CERT=false
+# SSL 证书路径
+FULLCHAIN_PATH="/path/to/fullchain.pem"
+PRIVKEY_PATH="/path/to/privkey.pem"
 
 # 证书备注名
 CURRENT_DATE=$(date +"%y/%m/%d")
 NOTE="Certificate $CURRENT_DATE"
 
 # 需要绑定的域名列表
-DOMAINS=("xxxxx.com" "cdn.xxxxx.com" "www.xxxxx.com")
+DOMAINS=("primary.com" "cdn.example.com" "www.example.com")
+
+# 是否删除旧证书
+DELETE_OLD_CERT=false
 
 ACCESS_TOKEN_CACHE=""
 
